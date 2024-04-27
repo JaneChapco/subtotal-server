@@ -13,8 +13,10 @@ app.use(express.json());
 const mongoURI = process.env.mongoURI;
 
 const subscriptionRoutes = require("./routes/subscription-routes.js");
+const userRoutes = require("./routes/user-routes.js");
 
 app.use("/subscriptions", subscriptionRoutes);
+app.use("/users", userRoutes);
 
 mongoose.connect(mongoURI)
 .then(() => {
