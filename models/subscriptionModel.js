@@ -14,9 +14,14 @@ const subscriptionSchema = mongoose.Schema(
             type: Number,
             required: true,
         },
+        interval: {
+            type: String,
+            enum: ['Monthly', 'Yearly'],
+            required: true,
+        },
         rating: {
             type: Number,
-            required: false,
+            required: true,
         },
     },
     {
