@@ -1,22 +1,18 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 
 require('dotenv').config();
 
 const PORT = process.env.PORT;
-
-const app = express();
-const mongoose = require('mongoose');
-
-app.use(cors());
-app.use(express.json());
 const mongoURI = process.env.mongoURI;
 
-const subscriptionRoutes = require("./routes/subscription-routes.js");
-const userRoutes = require("./routes/user-routes.js");
+const app = express();
+app.use(cors());
+app.use(express.json());
 
+const subscriptionRoutes = require("./routes/subscription-routes.js");
 app.use("/subscriptions", subscriptionRoutes);
-app.use("/users", userRoutes);
 
 mongoose.connect(mongoURI)
 .then(() => {
