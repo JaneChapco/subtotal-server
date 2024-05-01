@@ -17,9 +17,9 @@ app.use("/subscriptions", subscriptionRoutes);
 mongoose.connect(mongoURI)
 .then(() => {
     app.listen(PORT, () => {
-        console.log(`🚀Server is running on port ${PORT}`);
+        console.log(`Server is running on port ${PORT}`);
     });
-    console.log('📎Connected to MongoDB');
+    console.log('Connected to MongoDB');
 }).catch((error) => {
     console.log(error);
 })
