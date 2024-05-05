@@ -19,10 +19,6 @@ const subscriptionSchema = mongoose.Schema(
             enum: ['Monthly', 'Yearly'],
             required: true,
         },
-        rating: {
-            type: Number,
-            required: true,
-        },
     },
     {
         timestamps: true
